@@ -1,11 +1,11 @@
-package org.neistronaut.lostfoundadoptable;
+package org.neistronaut.lostfoundadoptable.dogs;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DogRepository {
 
-    public static List<Dog> dogsDatabase = createDogDatabase();
+    public static List<Dog> DOG_INITIAL_DATABASE = createDogDatabase();
 
     private static List<Dog> createDogDatabase() {
         List<Dog> dogs = new ArrayList<Dog>();

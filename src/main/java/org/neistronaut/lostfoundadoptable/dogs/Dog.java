@@ -1,4 +1,4 @@
-package org.neistronaut.lostfoundadoptable;
+package org.neistronaut.lostfoundadoptable.dogs;
 
 public class Dog {
 
@@ -20,6 +20,17 @@ public class Dog {
         this.size = size;
         this.breed = breed;
         this.description = description;
+    }
+    public Dog(long id, String name, int age, String size, String breed, String description) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.size = DOG_SIZES.valueOf(size);
+        this.breed = breed;
+        this.description = description;
+    }
+
+    public Dog() {
     }
 
     public long getId() {
@@ -68,5 +79,9 @@ public class Dog {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Object[] serializeForDb() {
+        return new String[] {Long.toString(id), name, Integer.toString(age), size.toString(), breed, description};
     }
 }
